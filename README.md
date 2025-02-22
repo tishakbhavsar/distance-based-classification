@@ -1,3 +1,3 @@
 README
-![Alt text]('wandb_screenshot.jpeg')
+![Alt text]("wandb_screenshot.png")
 
