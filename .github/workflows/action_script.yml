@@ -21,15 +21,14 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install -r requirements.txt
-          pip install jupyter nbconvert papermill wandb
+           pip install jupyter nbconvert papermill wandb numpy pandas scikit-learn
 
       - name: Run Jupyter Notebook
         env:
           WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}  # stored in GitHub Secrets 
         run: |
-          papermill notebook.ipynb output.ipynb
-
+          papermill Lab_5_MLPR.ipynb output.ipynb
+          
       - name: Commit and Push Updated Notebook
         run: |
           git config --global user.name "GitHub Actions"
