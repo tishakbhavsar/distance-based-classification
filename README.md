@@ -3,5 +3,5 @@
 #### Screenshot of WandB Dashboard ####
 
 ### Project Report ### 
-![Alt text]("wandb_screenshot.jpeg")
+![Alt text]("wandb_screenshot.png")
 
