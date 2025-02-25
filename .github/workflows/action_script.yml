@@ -1,0 +1,40 @@
+name: Auto-run Jupyter Notebook
+
+on:
+  push:
+    paths:
+      - "**.ipynb"  # when ipynb file is modified
+  workflow_dispatch:  
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install jupyter nbconvert papermill wandb
+
+      - name: Run Jupyter Notebook
+        env:
+          WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}  # stored in GitHub Secrets 
+        run: |
+          papermill notebook.ipynb output.ipynb
+
+      - name: Commit and Push Updated Notebook
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add output.ipynb
+          git commit -m "Auto-rerun Jupyter Notebook"
+          git push
+        continue-on-error: true
