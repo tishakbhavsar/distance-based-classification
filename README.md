@@ -1,3 +1,4 @@
-README
-![Alt text]("wandb_screenshot.png")
+Distance-Based Classification
+
+![Alt text]("wandb_screenshot.jpeg")
 
