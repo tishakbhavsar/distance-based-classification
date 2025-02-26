@@ -21,7 +21,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-           pip install jupyter nbconvert papermill wandb numpy pandas scikit-learn
+           pip install jupyter nbconvert papermill wandb numpy pandas scikit-learn opencv-python matplotlib
 
       - name: Run Jupyter Notebook
         env:
