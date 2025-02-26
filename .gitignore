@@ -1,0 +1,12 @@
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore package metadata
+INSTALLER
+LICENSE
+METADATA
+RECORD
+REQUESTED
+entry_points.txt
+dotenv
