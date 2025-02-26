@@ -20,9 +20,6 @@ This project allowed me to explore a bunch of different tools I have never used 
 
 ![Alt text](kaggle-image.jpeg)
 
-##### Github Actions Page #####
-
-![Alt text](github-workflows.jpeg)
 
 
 
